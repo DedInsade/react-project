@@ -1,0 +1,27 @@
+.post
+{
+  display: flex;
+  color: rgba(255, 255, 255, 0.781);
+}
+.img img
+{
+  display: flex;
+  width: 60px;
+  border-radius: 30px;
+}
+.like
+{
+  width: 70px;
+  height: 25px;
+  margin: 0 0 0 10px;
+  padding: 0 0 0 10px;
+  border: 1px solid currentColor;
+  background-color: royalblue;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.message
+{
+  
+}

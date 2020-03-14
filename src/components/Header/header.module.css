@@ -1,0 +1,12 @@
+.header
+{
+  grid-area: header;
+  background-color: cadetblue;
+  font-size: 40px;
+  font-family: consolas;
+  padding: 5px 0 0 40px;
+}
+.header img
+{
+  width: 20px;
+}
