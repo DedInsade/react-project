@@ -12,26 +12,50 @@ const DialogItem = (props) => {
 
 const MessageItem = (props) => {
     return (
-        <div className={mess.message}>{props.mess}</div>
+        <div className={mess.message}>
+            <div className={mess.message__1}>
+{/*              <img  className={mess.img} src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"></img>
+ */}            {props.mess}
+            </div>
+           
+            <div className={mess.message__2}>
+                {props.mess_dude}
+                {/* <img  className={mess.img} src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"></img> */}
+            </div>
+        </div>
     )
 }
+
 
 const Message = (props) => {
 
     let dialogsElements = props.state.dialogsData.map ( d =>  <DialogItem name={d.name} id={d.id}/>);
 
-    let messagesElements = props.state.messagesData.map ( m =>  <MessageItem mess={m.mess} id={m.id}/>);
+    let messagesElements = props.state.messagesData.map ( m =>  <MessageItem mess={m.mess} mess_dude={m.mess2} id={m.id}/>);
+
+    let newMessageElement = React.createRef();
+
+    let sendMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    }
 
     return (
         <div className={mess.dialogs}>
             <div className={mess.dialogsItems}>
                 {dialogsElements}
             </div>
-
+            <div>
             <div className={mess.Messages}>
-                {messagesElements}
+                {messagesElements} 
+            </div>
+            <div>
+                <textarea ref={newMessageElement}></textarea> <br />
+                <button onClick={sendMessage}>Send Message</button>
+            </div>
             </div>
         </div>
+
     )
 }
 

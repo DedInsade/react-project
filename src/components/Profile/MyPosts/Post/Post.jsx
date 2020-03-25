@@ -15,7 +15,7 @@ const Post = (props) => {
           </div>
 
           <div className={posts.like}>
-            <span> {props.likes} Likes</span>
+            <span> {props.likesCount} Likes</span>
           </div>
       </div>
     </div>

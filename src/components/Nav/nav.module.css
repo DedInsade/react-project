@@ -10,9 +10,34 @@
   padding-left: 10px;
   color: antiquewhite;
   text-decoration: none;
+  font-size: 24px;
 }
 
 .item a.active
 {
   color: gold;
+}
+.item a:hover
+{
+  color: goldenrod;
+}
+
+.img 
+{
+    width: 30px;
+    padding: auto;
+}
+
+.item__friends
+{
+  display: flex;
+  margin: 20px 0 0 0;
+  font-family: consolas;
+  padding-left: 10px;
+  text-decoration: none;
+}
+.item_friend
+{
+  margin: 5px;
+  font-size: 18px;
 }

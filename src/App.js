@@ -15,9 +15,12 @@ const App = (props) => {
     <BrowserRouter>
     <div className='app-wrapper'>
       <Header />
-      <Nav />
+      <Nav state={props.state.sidebar}/>
       <div className='app-wrapper-content'>
-        <Route path='/profile' render={ () => <Profile state={props.state.profilePage}/>}/>
+        <Route path='/profile' render={ () => <Profile 
+                                                     profilePage={props.state.profilePage} 
+                                                    addPost={props.addPost} 
+                                                    updateNewPostText={props.updateNewPostText}/>}/>
         <Route path='/messages' render={ () => <Message state={props.state.messagesPage}/>}/>
         <Route path='/myprojects' render={ () => <MyProjects/>}/> 
         <Route path='/settings' render={ () => <Setting/>}/>
