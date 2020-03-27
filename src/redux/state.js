@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree =() => {
+    console.log("State was change");
+}
 
 let state = {
 
@@ -25,7 +27,8 @@ let state = {
             {id: 1, mess: 'Nothing'}, 
             {id: 2, mess2: 'Okey, bro'}, 
             {id: 2, mess2: 'Good night!'} 
-        ]
+        ],
+        newMessageText: ''
 
     },
     sidebar: {
@@ -55,5 +58,25 @@ export let updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 }
 
+export let sendMessage = () => {
+    let newMessage = {
+        id: 2,
+        mess2: state.messagePage.newMessageText,
+    };
 
-export default state;
+    state.messagePage.messagesData.push(newMessage);
+    state.messagesPage.newMessageText ='';
+
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText;
+    rerenderEntireTree(state);
+}
+
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;  
+}
+    export default state;
