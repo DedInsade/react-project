@@ -45,19 +45,6 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;  
     },
-
-    addPost() {
-        let newPost = {
-            id: 3,
-            post: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-         
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText ='';
-    
-        this._callSubscriber(this._state);
-    },
  
     dispatch(action) {  // { type: 'ADD-POST' }
         if (action.type === 'ADD-POST') {
