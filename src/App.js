@@ -7,11 +7,11 @@ import Message from './components/Messages/Message';
 import { Route, BrowserRouter } from 'react-router-dom';
 import MyProjects from './components/MyProjects/myproject';
 import Setting from './components/Settings/settings';
-import store from './redux/state';
+import store from './redux/store';
 
 
 const App = (props) => {
-
+debugger;
   return (
     <BrowserRouter>
     <div className='app-wrapper'>
@@ -21,7 +21,6 @@ const App = (props) => {
         <Route path='/profile' render={ () => <Profile 
                                                     profilePage={props.state.profilePage} 
                                                     dispatch={props.dispatch}/>}/>
-
         <Route path='/messages' render={ () => <Message store={props.store}/>}/>
         <Route path='/myprojects' render={ () => <MyProjects/>}/> 
         <Route path='/settings' render={ () => <Setting/>}/>

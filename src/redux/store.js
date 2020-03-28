@@ -1,4 +1,10 @@
-import profileReducer from "./profileReducer";
+//Store saved for future use in other projects. 
+//Using his example, you can understand the work of the logic of Redux.
+
+
+
+
+/* import profileReducer from "./profileReducer";
 import messageReducer from "./messageReducer";
 import sidebarReducer from "./sidebarReducer";
 
@@ -66,4 +72,4 @@ export default store;
 window.store = store;
 
 //action is an object(!) with property 'type'
-// reducer take 'state' and return new state
+// reducer take 'state' and return new state */
