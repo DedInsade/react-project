@@ -30,19 +30,19 @@ const MessageItem = (props) => {
 
 const Message = (props) => {
 
-    let state = props.store.getState().messagesPage;
-    debugger;
+    let state = props.messagesPage;
+
     let dialogsElements = state.dialogsData.map ( d =>  <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = state.messagesData.map ( m =>  <MessageItem mess={m.mess} mess_dude={m.mess2} id={m.id}/>);
     let newMessageText = state.newMessageText;
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageActionCreator());
+        props.sendMessage();
     }
 
     let onMessageTextChange = (e) => {
         let messText = e.target.value;
-        props.store.dispatch(updateNewMessageTextActionCreator(messText));
+        props.updateNewMessageText(messText);
     }
 
     return (
