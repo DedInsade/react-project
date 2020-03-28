@@ -1,7 +1,9 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import profileReducer from "./profileReducer";
+import messageReducer from "./messageReducer";
+import sidebarReducer from "./sidebarReducer";
 
-let store = {
+//Store is main storage with Data
+let store = {   
     _state: {
         profilePage: {
             postsData: [ 
@@ -28,7 +30,6 @@ let store = {
                 {id: 2, mess2: 'Good night!'} 
             ],
             newMessageText: ''
-    
         },
         sidebar: {
             friendsData: [
@@ -49,30 +50,20 @@ let store = {
         this._callSubscriber = observer;  
     },
  
-    dispatch(action) {  // { type: 'ADD-POST' }
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 3,
-                post: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-             
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText ='';
-        
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
+    dispatch(action) {
+
+        this._state.profilePage = profileReducer( this._state.profilePage, action);
+        this._state.messagesPage = messageReducer( this._state.messagesPage, action);
+        this._state.sidebar = sidebarReducer( this._state.sidebar, action);
+
+        this._callSubscriber(this._state);
     }    
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
 export default store;
 
 window.store = store;
 
-//action is an object(!)
+//action is an object(!) with property 'type'
+// reducer take 'state' and return new state

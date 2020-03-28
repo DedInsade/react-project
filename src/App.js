@@ -7,6 +7,7 @@ import Message from './components/Messages/Message';
 import { Route, BrowserRouter } from 'react-router-dom';
 import MyProjects from './components/MyProjects/myproject';
 import Setting from './components/Settings/settings';
+import store from './redux/state';
 
 
 const App = (props) => {
@@ -20,11 +21,8 @@ const App = (props) => {
         <Route path='/profile' render={ () => <Profile 
                                                     profilePage={props.state.profilePage} 
                                                     dispatch={props.dispatch}/>}/>
-        <Route path='/messages' render={ () => <Message 
-                                                    messagesPage={props.state.messagesPage}
-                                                    sendMessage={props.sendMessage}
-                                                    updateNewMessageText={props.updateNewMessageText}
-                                                    state={props.state.messagesPage}/>}/>
+
+        <Route path='/messages' render={ () => <Message store={props.store}/>}/>
         <Route path='/myprojects' render={ () => <MyProjects/>}/> 
         <Route path='/settings' render={ () => <Setting/>}/>
       </div>
