@@ -11,11 +11,11 @@ let initialState = {
     messagesData: [
         {id: 1, mess: 'Hi',},
         {id: 2, mess2: 'Hello'},
-        {id: 1, mess: 'How are you?'},
-        {id: 2, mess2: 'I am fine. Whats up?'},
-        {id: 1, mess: 'Nothing'}, 
-        {id: 2, mess2: 'Okey, bro'}, 
-        {id: 2, mess2: 'Good night!'} 
+        {id: 3, mess: 'How are you?'},
+        {id: 4, mess2: 'I am fine. Whats up?'},
+        {id: 5, mess: 'Nothing'}, 
+        {id: 6, mess2: 'Okey, bro'}, 
+        {id: 7, mess2: 'Good night!'} 
     ],
     newMessageText: ''
 };
@@ -23,21 +23,25 @@ let initialState = {
 const messageReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case SEND_MESSAGE:
-            let messText = state.newMessageText;
-        
-            state.messagesData.push({ id: 2, mess2: messText });
-            state.newMessageText= '';
-            break;
+        case SEND_MESSAGE: {
 
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.messText;
-            break;
+            let messText = state.newMessageText;
+            return {
+                ...state,
+                newMessageText: '',
+                messagesData: [...state.messagesData, { id: 8, mess2: messText }],
+
+            }
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            return {
+                ...state,
+                newMessageText: action.messText
+            };
+        }
         default:
                 return state;
     }
-
-    return state;
 }
 
 export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})

@@ -1,52 +1,14 @@
-.dialogs
-{
-    display: grid;
-    grid-template-columns: 2fr 4fr 3fr;
-    
-
-}
-.dialogsItems a
-{
-    font-family: consolas;
-    padding: 0 0 0 20px ;
-    font-size: 24px;
-    text-decoration: none;
-    color: rgb(238, 244, 245);
-}
-.dialogsItems a:hover
-{
-    text-decoration:none;
-    color: rgba(2, 135, 158, 0.534);
-}
-
-.img 
-{
-    width: 30px;
-    
-}
-
-.dialog 
-{
-
-}
-
-.Messages
-{
-    padding: 10px;
-}
-
 .message
 {
     color: white;
 }
-.active
-{
-    color: gold;
-}
+
 .message__1
 {
     font-size: 30px;
-    color: rgb(5, 44, 88);
+    color: rgb(6, 115, 179);
+    margin: 10px 0 10px 0;
+
 }
 
 .message__2
@@ -54,4 +16,9 @@
     font-size: 30px;
     text-align: right;
     color: rgb(75, 82, 92);
+}
+
+.img 
+{
+    width: 30px;  
 }

@@ -4,7 +4,7 @@ import head from './header.module.css';
 const Header = () => {
     return (
        <header className={head.header}>
-        Моё портфолио
+        My portfolio
       </header>
     )
 }

@@ -13,7 +13,9 @@ const FriendsItem = (props) => {
 }
 
 const Nav = (props) => {
-  let FriendsElemet = props.state.friendsData.map ( d =>  <FriendsItem name={d.name} id={d.id}/>);
+  let state = props.friendsData;
+
+  let FriendsElemet = state.friendsData.map ( d =>  <FriendsItem name={d.name} key={d.id} id={d.id}/>);
 
 
     return (
