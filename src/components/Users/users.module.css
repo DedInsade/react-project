@@ -1,12 +1,12 @@
 .avatar_img {
-    width: 50px;
+    width: 100px;
     border: rgb(128, 96, 128) 4px solid;
+    background-color: rgb(52, 52, 58);
 }
 .users
 {
     display: grid;
     width: 90%;
-    padding-left: 5%;
     padding-right: 5%;
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 1fr 1fr;
@@ -40,7 +40,7 @@
 }
 .users__status__profile__name
 {
-    font-size: 34px;
+    font-size: 30px;
 }
 .users__status__profile__status
 {
