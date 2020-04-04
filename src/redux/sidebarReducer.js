@@ -1,8 +1,11 @@
 let initialState = {
         friendsData: [
-            {id: 2, name: 'Kris'},
-            {id: 3, name: 'Anna'},
-            {id: 4, name: 'Dmitry'}
+            {id: 2, avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png',
+             name: 'Kris'},
+            {id: 3, avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png',
+             name: 'Anna'},
+            {id: 4, avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png',
+             name: 'Dmitry'}
         ]
 };
 

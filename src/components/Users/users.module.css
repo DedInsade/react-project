@@ -1,0 +1,55 @@
+.avatar_img {
+    width: 50px;
+    border: rgb(128, 96, 128) 4px solid;
+}
+.users
+{
+    display: grid;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+.users__shortlog
+{
+    background-color: rgb(200, 200, 201);
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 3fr 12fr;
+
+    
+}
+.users__AnB
+{
+    padding: 10px 0 10px 10px;
+}
+
+
+
+.users__status
+{
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    margin: 10px;
+}
+.users__status__profile
+{
+    padding-left: 10px;
+    font-family: consolas;
+}
+.users__status__profile__name
+{
+    font-size: 34px;
+}
+.users__status__profile__status
+{
+    font-size: 16px;
+}
+
+.users__status__location
+{
+    text-align: right;
+    font-size: 17px;
+    color: rgb(2, 78, 88);
+}
