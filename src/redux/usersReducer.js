@@ -1,23 +1,16 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 
 
 let initialState = {
-        users: [
-            /* {id: 1, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: true, 
-            fullName: 'Elliot' , status: 'Good day', location: {city: 'Saint-Peterburg', country: 'Russia'} },
-            {id: 2, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: false, 
-            fullName: 'John' , status: 'Good day to programming', location: {city: 'Minsk', country: 'Belarus'} },
-            {id: 3, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: true, 
-            fullName: 'Vitaliy' , status: 'Time to D&D 5e', location: {city: 'Uzgorod', country: 'Ukrain'} },
-            {id: 4, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: false, 
-            fullName: 'Kirishiko' , status: 'Anime is live', location: {city: 'Tokyo', country: 'Japan'} },
-            {id: 5, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: true, 
-            fullName: 'Vitaliy' , status: 'Time to D&D 5e', location: {city: 'Uzgorod', country: 'Ukrain'} },
-            {id: 6, photoUrl: 'https://www.1999.co.jp/itbig57/10578453.jpg', followed: false, 
-            fullName: 'Kirishiko' , status: 'Anime is live', location: {city: 'Tokyo', country: 'Japan'} } */
-         ]
+        users: [ ],
+        pageSize: 6,
+        totalUsersCount: 0,
+        currentPage: 1,
+        pageNeighbours: 2
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -45,12 +38,14 @@ const usersReducer = (state = initialState, action) => {
                 })
             }
         }
-        
         case SET_USERS: {
-            return {
-                ...state, 
-                users: [...state.users, ...action.users]
-            }
+            return { ...state, users: action.users }
+        }
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.currentPage}
+        }
+        case SET_USERS_TOTAL_COUNT: {
+            return {...state, totalUsersCount: action.totalCount}
         }
         default: 
             return state;
@@ -60,6 +55,8 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (usersId) => ({type: FOLLOW, usersId})
 export const unfollowAC = (usersId) => ({type: UNFOLLOW, usersId})
 export const setUsersAC = (users) => ({type: SET_USERS, users})
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setUsersTotalCountAC = (totalCount) => ({type: SET_USERS_TOTAL_COUNT, totalCount})
 
 
 export default usersReducer;

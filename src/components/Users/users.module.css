@@ -1,22 +1,56 @@
+.all 
+{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
 .avatar_img {
     width: 100px;
     border: rgb(128, 96, 128) 4px solid;
     background-color: rgb(52, 52, 58);
 }
+
+
+.pagination
+{
+    cursor: pointer;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 15px;
+    font-family: consolas;
+}
+.selectedPage {
+    border: gold 3px solid;
+    font-size: 20px;
+}
+
+.unselectedPage {
+
+    border: gold 1px solid;
+    font-size: 20px;
+}
+.unselectedPage:hover {
+    border: gold 2px solid;
+    font-size: 20px;
+}
+
+
 .users
 {
     display: grid;
     width: 90%;
     padding-right: 5%;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr;
 }
 .users__shortlog
 {
     background-color: rgb(200, 200, 201);
     margin: 10px;
     display: grid;
-    grid-template-columns: 3fr 12fr;
+    grid-template-columns: 1fr 4fr;
 
     
 }
@@ -30,7 +64,7 @@
 .users__status
 {
     display: grid;
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 1fr 1fr;
     margin: 10px;
 }
 .users__status__profile
@@ -44,6 +78,7 @@
 }
 .users__status__profile__status
 {
+    width: 90%;
     font-size: 16px;
 }
 
@@ -53,3 +88,6 @@
     font-size: 17px;
     color: rgb(2, 78, 88);
 }
+
+
+
