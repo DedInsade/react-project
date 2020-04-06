@@ -26,20 +26,20 @@
 
 .dialog 
 {
-    
+
 }
 
 .Messages
 {
     padding: 0;
     background: #ffffff6c;
-
+    height: auto;
 }
 
 .message
 {
     color: white;
-
+    padding: 0 10px 0 10px;
 }
 .active
 {

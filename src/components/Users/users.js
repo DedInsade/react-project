@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './users.module.css';
 import userPhoto from '../../img/user.png';
+import Preloader from '../common/preloader';
 
 
 let Users = (props) => {
@@ -16,10 +17,12 @@ let Users = (props) => {
         <div className={style.all}>
                 <div className={style.pagination}>
                     {pages.map( p => {
-                        return <span className={ props.currentPage === p ? style.selectedPage : style.unselectedPage}
-                        onClick={ (e) => { props.onPageChanged(p); }}> {p} </span>
+                        return <div className={ props.currentPage === p ? style.selectedPage : style.unselectedPage}
+                        onClick={ (e) => { props.onPageChanged(p); }}> {p} </div>
                     })}
                 </div>
+
+                {props.isFetching ? <Preloader /> :
                 <div className={style.users}>
                {
                     props.users.map( u => 
@@ -54,8 +57,8 @@ let Users = (props) => {
     
                </div> )}
             </div>
+            }
             </div>
-            
         )
 }
 

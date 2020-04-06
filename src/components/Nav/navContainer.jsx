@@ -5,9 +5,11 @@ import Nav from './nav';
 
 let mapStateToProps = (state) => {
   return {
-      friendsData: state.sidebar
+      friendsData: state.sidebar.friendsData,
   }
 }
+
+
 
 const NavContainer = connect(mapStateToProps) (Nav);
 

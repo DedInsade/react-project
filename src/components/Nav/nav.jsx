@@ -13,9 +13,8 @@ const FriendsItem = (props) => {
 }
 
 const Nav = (props) => {
-  let state = props.friendsData;
 
-  let FriendsElemet = state.friendsData.map ( d =>  <FriendsItem name={d.name} key={d.id} id={d.id}/>);
+  let FriendsElemet = props.friendsData.map ( d =>  <FriendsItem name={d.name} key={d.id} id={d.id}/>);
 
 
     return (
@@ -36,10 +35,9 @@ const Nav = (props) => {
           <NavLink to='/myprojects' activeClassName={cl.active}>My projects</NavLink>
         </div>
 
-        
-
       <br>
       </br>
+
         <div className={cl.item}>
           <NavLink to='/settings' activeClassName={cl.active}>Settings</NavLink>
         </div>

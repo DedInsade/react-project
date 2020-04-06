@@ -1,7 +1,6 @@
 .all 
 {
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin: 20px 0 40px 3%;
 }
 
 .avatar_img {
@@ -13,26 +12,33 @@
 
 .pagination
 {
+    display: flex;
     cursor: pointer;
     text-align: center;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    font-size: 15px;
+    margin-left: 10px;
     font-family: consolas;
 }
 .selectedPage {
-    border: gold 3px solid;
+    margin: 3px;
+    padding: 2px;
+    min-width: 25px;
+    min-height: 25px;
+    border: rgb(0, 113, 219) 2px solid;
     font-size: 20px;
+    border-radius: 15%;
 }
 
 .unselectedPage {
-
-    border: gold 1px solid;
+    margin: 3px;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 2px;
+    border: rgb(77, 76, 76) 2px solid;
+    border-radius: 15%;
     font-size: 20px;
 }
 .unselectedPage:hover {
-    border: gold 2px solid;
+    border: rgb(0, 113, 219) 2px solid;
     font-size: 20px;
 }
 
@@ -48,7 +54,7 @@
 .users__shortlog
 {
     background-color: rgb(200, 200, 201);
-    margin: 10px;
+    margin: 10px 0 10px 10px;
     display: grid;
     grid-template-columns: 1fr 4fr;
 

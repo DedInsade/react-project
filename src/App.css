@@ -15,6 +15,7 @@
 .app-wrapper-content
 {
     grid-area: content;
+    min-height: 600px;
     background-color: darkgray;
 }
 
