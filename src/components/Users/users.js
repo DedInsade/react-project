@@ -32,9 +32,9 @@ let Users = (props) => {
                             <img className={style.avatar_img} src={ u.photos.small != null ? u.photos.small : userPhoto }/>
                         </div>
                         <div >
-                            {u.followed
-                            ? <button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
-                            : <button onClick={() => {props.follow(u.id)}}>Follow</button> 
+                            {u.followed 
+                            ? <button className={style.users__AnB__button} onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
+                            : <button className={style.users__AnB__button} onClick={() => {props.follow(u.id)}}>Follow</button> 
                             }
                         </div>
                     </span>

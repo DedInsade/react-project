@@ -5,8 +5,9 @@
 
 .avatar_img {
     width: 100px;
-    border: rgb(128, 96, 128) 4px solid;
+    border: rgb(128, 96, 128) 4px inset;
     background-color: rgb(52, 52, 58);
+    border-top-left-radius: 25px;
 }
 
 
@@ -57,6 +58,7 @@
     margin: 10px 0 10px 10px;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    border-radius: 25px;
 
     
 }
@@ -64,6 +66,21 @@
 {
     padding: 10px 0 10px 10px;
 }
+
+.users__AnB__button
+{
+    width: 67%;
+    border-bottom-left-radius: 25px;
+    border: rgb(128, 96, 128) 4px outset;
+    font-size: 20px;
+    font-family: consolas;
+}
+.users__AnB__button:hover
+{
+    border: rgb(128, 96, 128) 4px inset;
+    background-color: rgb(230, 230, 230);
+}
+
 
 
 
