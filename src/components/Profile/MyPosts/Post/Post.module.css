@@ -1,34 +1,40 @@
 .post
 {
-  display: flex;
-  color: rgba(255, 255, 255, 0.781);
-  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
+  grid-gap: 13px;
+  color: rgb(0, 0, 0);
   padding: 10px;
+  margin-bottom: 10px;
   border-radius: 20px;
   background: rgba(0, 89, 141, 0.692);
 }
-.img img
+.img
 {
-  display: flex;
   border: rgb(3, 202, 252) 5px solid;
   margin-right: 10px;
   width: 60px;
-  border-radius: 90px;
-}
-.like
-{
-  width: 70px;
-  height: 25px;
-  margin: 15px 0 0 10px;
-  padding: 0 0 0 10px;
-  border: 1px solid currentColor;
-  background-color: royalblue;
-  border-radius: 40px;
-  justify-content: center;
-  align-items: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .message
 {
+  font-size: 20px;
+  font-family: consolas;
+}
+.like
+{
+  text-align: center;
+  border: outset 5px;
+  font-family: consolas;
+  font-size: 25px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.message
+{
+  font-size: 20px;
+  font-family: consolas;
   margin-bottom: 5px;
   margin-left: 15px;
 }

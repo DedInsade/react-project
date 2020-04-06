@@ -1,17 +1,49 @@
 .ApD 
 {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 5fr 3fr;
 }
 
 .avatar
 {
-  padding: 10px 0 0 10px ;
+  margin: 10px 0 0 10px ;
   width: 200px;
+  border: rgb(128, 96, 128) 4px inset;
+  background-color: rgb(52, 52, 58);
+  border-top-left-radius: 50px;
 }
 .descript
 {
+  margin-top: 10px;
   padding-left: 20px;
-  font-size: 24px;
-   font-family: consolas;
+  font-family: consolas;
+}
+.descript__name
+{
+  font-size: 30px;
+  font-family: consolas;
+  margin-bottom: 1%;
+}
+.descript__about
+{
+  font-size: 14px;
+  margin-left: 1%;
+  margin-bottom: 3%;
+}
+.descript__work
+{
+  padding-top: 2%;
+  padding-left: 3%;
+  width: 60%;
+  border: rgb(128, 96, 128) 4px solid;
+  background-color: rgb(209, 209, 219);
+}
+.descript__img
+{
+  width: 100px;
+  margin-left: 30%;
+}
+.descript__contacts
+{
+  font-size: 20px;
 }

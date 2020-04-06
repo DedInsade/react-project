@@ -1,24 +1,25 @@
 import React from 'react';
 import posts from './Post.module.css';
+import userPhoto from '../../../../img/user.png';
+
 
 const Post = (props) => {
     return (
     <div className={posts.post}>
 
-      <div className={posts.img}> 
-          <img src="https://static01.nyt.com/images/2016/09/28/us/17xp-pepethefrog_web1/28xp-pepefrog-articleLarge.jpg?quality=75&auto=webp&disable=upscale" />
-      </div>
+          <div> 
+              <img className={posts.img} src={props.photo != null 
+                ? props.photo
+                : userPhoto} 
+            />
+          </div>
       
-      <div className={posts.text}>
           <div className={posts.message}>
-            {props.post}
+              {props.post}
           </div>
 
-          <div className={posts.like}>
-            <span> {props.likesCount} Likes</span>
-          </div>
+          <button className={posts.like}> {props.likesCount} Likes </button>
       </div>
-    </div>
 
     )
 }

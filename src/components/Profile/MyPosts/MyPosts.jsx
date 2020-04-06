@@ -1,9 +1,15 @@
 import React from 'react';
 import posts from './MyPosts.module.css';
 import Post from './Post/Post';
+import userPhoto from '../../../img/user.png';
 
 const MyPosts = (props) => {
-  let postsElements = props.postsData.map ( p => <Post post={p.post} key={p.id}likesCount={p.likesCount}/>);
+
+  let postsElements = props.postsData.map ( p => <Post post={p.post} 
+                                                      key={p.id} 
+                                                      likesCount={p.likesCount} 
+                                                      photo={props.profile.photos.small}
+                                                />);
 
   let newPostElement = React.createRef();
 
@@ -18,18 +24,30 @@ const MyPosts = (props) => {
 
     return (
       <div className={posts.main}>
-          <div className='posts.header'>
+          <div className={posts.header}>
             My Posts
           </div>
-          <div>
-            <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText}/>
-            <br></br>
-            <button onClick={ onAddPost } >Add post</button>
+
+          <div className={posts.main__newPost}>
+            <img className={posts.main__newPost__img} src={props.profile.photos.small != null 
+              ? props.profile.photos.small 
+              : userPhoto} />
+            
+            <textarea className={posts.main__newPost__text} 
+                      ref={newPostElement} 
+                      onChange={onPostChange} 
+                      value={props.newPostText}
+                      placeholder="Write your thoughts here..."/>
+
+            <button className={posts.main__newPost__addPost} onClick={ onAddPost } >Add post</button>
           </div>
+
           <br></br>
-            <div className={posts.posts}>
+
+          <div>
                 {postsElements}
-            </div>
+          </div>
+
       </div>
     )
 }

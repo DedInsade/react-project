@@ -1,11 +1,45 @@
 .main
 {
+  margin-top: 3%;
   color: brown;
-  padding-left: 10px;
+  margin-left: 2%;
   width: 70%;
+
 }
 .header
 {
-  
+  font-size: 24px;
+  text-align: center;
 }
 
+.main__newPost
+{
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
+  grid-gap: 13px;
+  color: rgba(255, 255, 255, 0.781);
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(0, 89, 141, 0.692);
+}
+.main__newPost__img
+{
+  border: rgb(3, 202, 252) 5px solid;
+  width: 60px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.main__newPost__text
+{
+  font-size: 20px;
+  font-family: consolas;
+  resize: none;
+}
+.main__newPost__addPost
+{
+  border: outset 5px;
+  font-family: consolas;
+  font-size: 25px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
