@@ -17,11 +17,16 @@ const App = (props) => {
       <Header />
       <NavContainer />
       <div className='app-wrapper-content'>
-        <Route path='/profile' render={ () => <ProfileContainer />}/>
-        <Route path='/messages' render={ () => <MessageContainer />}/>
-        <Route path='/users' render={ () => <UsersContainer/>}/>
-        <Route path='/myprojects' render={ () => <MyProjects/>}/> 
-        <Route path='/settings' render={ () => <Setting/>}/>
+        <Route path='/profile/:userId?' 
+               render={ () => <ProfileContainer />}/>
+        <Route path='/messages'
+               render={ () => <MessageContainer />}/>
+        <Route path='/users' 
+               render={ () => <UsersContainer/>}/>
+        <Route path='/myprojects'
+               render={ () => <MyProjects/>}/> 
+        <Route path='/settings'
+               render={ () => <Setting/>}/>
       </div>
     </div>
     </BrowserRouter>
