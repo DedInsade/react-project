@@ -3,11 +3,13 @@ import style from './users.module.css';
 import userPhoto from '../../img/user.png';
 import Preloader from '../common/preloader';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
+import { usersAPI } from '../../api/api';
 
 
 let Users = (props) => {
 
-    let pagesCount = Math.ceil(100 / props.pageSize);
+    let pagesCount = Math.ceil(60 / props.pageSize);
 
             let pages = [];
             for (let i=1; i <= pagesCount; i++) {
@@ -34,11 +36,29 @@ let Users = (props) => {
                                 <img className={style.avatar_img} src={ u.photos.small != null ? u.photos.small : userPhoto }/>
                             </NavLink>
                         </div>
-                        <div >
+                        <div>
                             {u.followed 
-                            ? <button className={style.users__AnB__button} onClick={() => {props.unfollow(u.id)}}>Unfollow</button>
-                            : <button className={style.users__AnB__button} onClick={() => {props.follow(u.id)}}>Follow</button> 
-                            }
+                            ? <button className={style.users__AnB__button} onClick={() => {
+
+                                usersAPI.unfollow(u.id).then(response => {
+                                    if (response.data.resultCode === 0) {
+                                        props.unfollow(u.id);
+                                    }
+                                });
+
+                            }}>Unfollow</button>
+
+                            : <button className={style.users__AnB__button} onClick={() => {
+
+                               usersAPI.follow(u.id).then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.follow(u.id);
+                                        }
+                                    });
+                                    
+
+                            }}>Follow</button>}
+
                         </div>
                     </span>
     
